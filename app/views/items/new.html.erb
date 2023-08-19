@@ -1,0 +1,27 @@
+<div>
+  <div class="loginHeader groupHeader">
+    <%= link_to category_items_path(@category), class: 'backArrow' do %>
+      <i class="icon-arrow-left"></i>
+    <% end %>
+    <h2 class="groupHeaderTitle titleT">Add a new transaction</h2>
+  </div>
+  <h4 class="noMovements"> All fields are mandatory </h4>
+  <%= form_with model: @item, url: category_items_path(@category), data: { turbo: false }, class: 'add-form' do |form| %>
+
+    <div class="field">
+      <%= form.text_field :name, placeholder: 'Enter the name' %>
+    </div>
+
+    <div class="field">
+      <%= form.number_field :amount, placeholder: 'Enter the amount' %>
+    </div>
+
+    <div class="field">
+      <%= form.hidden_field :category_id, value: @category.id %>
+    </div>
+
+    <div class="action">
+      <%= form.submit 'Save', class: "saveT"%>
+    </div>
+  <% end %>
+</div>
