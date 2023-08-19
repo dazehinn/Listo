@@ -1,15 +1,410 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url('https://fonts.googleapis.com/css2?family=Proxima+Nova');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Proxima Nova', sans-serif;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+.linkContainer {
+  width: 100%;
+  display: flex;
+  background-color: #5fb523;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.link-to {
+  background-color: #5fb523;
+  color: #fff;
+  padding: 10px 10px;
+  width: 80vw;
+  justify-content: center;
+  margin: auto;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  display: flex;
+  align-self: center;
+  border: #fff 1px solid;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.link-to:hover {
+  background-color: #45a049;
+}
+
+.noCategory {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.button {
+  width: 90%;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 0.1rem;
+  margin-bottom: 1%;
+}
+
+/* Splash Screen */
+
+.splash {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 20vh;
+  width: 90%;
+  gap: 10px;
+}
+
+.btnContainer form {
+  width: 100%;
+}
+
+.btn-blue {
+  background-color: #3778c2;
+  color: #fff;
+  text-transform: uppercase;
+  width: 100%;
+  padding: 11.5px 0;
+}
+
+.btn-grey {
+  color: #434b54;
+  background-color: #fffefe;
+  text-transform: uppercase;
+  width: 100%;
+  padding: 11.5px 0;
+}
+
+.splashTitle {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  font-size: 2.6rem;
+}
+
+/* Log In Page */
+
+.logIn {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginHeader {
+  background-color: #3778c2;
+  color: #fff;
+  padding: 2%;
+  display: flex;
+  gap: 10%;
+}
+
+.loginHeader h2,
+.forgotPassword h2 {
+  margin: auto 32%;
+  font-weight: 400;
+  align-self: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2vw;
+}
+
+.backArrow,
+.search {
+  width: 2em;
+  height: 2em;
+  align-self: center;
+}
+
+a [class^="icon-"],
+a [class*=" icon-"] {
+  display: flex !important;
+  flex-direction: column;
+  width: 2em !important;
+  height: 1.5em !important;
+  color: #fff;
+  justify-content: center;
+  align-self: center;
+  align-content: center;
+  padding-left: 5px;
+  font-size: 20px;
+}
+
+.field input {
+  width: 100%;
+  border: none;
+  background-color: #fffefe;
+  border-bottom: 1px solid #d4d4d4;
+  padding: 18px 10px !important;
+}
+
+.field .email,
+.imputField .email {
+  border-bottom: 1px solid #d4d4d4;
+  border-top: 1px solid #d4d4d4;
+  margin-top: 3%;
+  margin-bottom: 0;
+}
+
+.action input {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  background-color: #3778c2;
+  border: none;
+  text-decoration: none;
+  color: #fff;
+  padding-right: 5px;
+}
+
+.linkForgot {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: #d4d4d4;
+}
+
+.linkForgot:hover {
+  color: #434b54;
+}
+
+/* sing up */
+
+.imputField input {
+  width: 100%;
+  border: none;
+  background-color: #fffefe;
+  border-bottom: 1px solid #d4d4d4;
+  padding: 18px 10px !important;
+  margin-bottom: 0 !important;
+}
+
+/* New Password */
+
+.forgotPassword {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Categories Index */
+
+.bodyCategory {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  top: 200px;
+}
+
+.categoryHeader {
+  gap: 4%;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.search img {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  display: flex;
+  color: #fff !important;
+  background-color: #3778c2;
+  margin-top: 5px;
+}
+
+.categories-title {
+  font-size: 2.2vw;
+  font-weight: 400;
+  text-align: center;
+  box-shadow: 1px 2px 4px rgba(86, 86, 86, 0.468);
+  padding: 2%;
+  margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categories-text {
+  order: 1;
+}
+
+.categories-number {
+  order: 2;
+}
+
+.categoriesContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  padding-right: 55px;
+}
+
+.categoryItem {
+  width: 90vw;
+  margin: 2%;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  justify-content: space-between;
+}
+
+.categoryItem a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.categoryItemImgCont {
+  width: 100px;
+  height: 10%;
+  margin: 4% 0;
+  margin-right: 20px;
+  margin-left: 4%;
+}
+
+.categoryItemTextCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 15px;
+  margin: 10px 0;
+  padding-top: 10px;
+}
+
+.categoryItemTextCont h3 {
+  color: #434b54;
+  text-transform: capitalize;
+  margin-bottom: 25px;
+}
+
+.categoryItemTextCont p {
+  margin-bottom: 0;
+  color: #7e878f;
+}
+
+.categoryItemCreated {
+  display: flex;
+  flex-direction: column;
+  padding-right: 15px;
+}
+
+.categoryItemCreated p {
+  color: #000;
+  align-self: flex-end;
+}
+
+.categoryItemCreated .btn {
+  background-color: #fff;
+  text-decoration: none;
+  color: #000;
+  border: none;
+  box-shadow: none;
+}
+
+/* Transactions Page */
+
+.transactions {
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.brand {
+  text-transform: capitalize;
+  padding-left: 5px;
+}
+
+.itemDetails {
+  display: flex;
+  flex-direction: row;
+}
+
+.cardTransactions {
+  top: 310px;
+}
+
+/* new tansaction/item page */
+
+.titleT {
+  margin: 0 20% !important;
+  padding-left: 80px;
+}
+
+.noItems {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.saveT {
+  padding-top: 5px;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 0 !important;
+  }
+
+  .categoriesContainer {
+    padding-right: 10px;
+  }
+
+  .bodyCategory {
+    top: 180px;
+  }
+
+  .cardTransactions {
+    top: 240px;
+  }
+}
