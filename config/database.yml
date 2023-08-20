@@ -1,0 +1,25 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: recipeApp_development
+  pool: 5
+  host: localhost
+  username: postgres
+  password: root
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: recipeApp_test
+  pool: 5
+  host: localhost
+  username: postgres
+  password: root
+
+staging: 
+  url: <%=
+  ENV['DATABASE_URL'] %>
+
+  production: 
+  url: <%=
+  ENV['DATABASE_URL'] %>

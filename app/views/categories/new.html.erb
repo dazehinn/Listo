@@ -1,0 +1,8 @@
+<div class="loginHeader categoryHeader">
+  <%= link_to categories_path, class: 'backArrow' do %>
+    <i class="icon-arrow-left"></i>
+  <% end %>
+  <h2 class="categoryHeaderTitle">New Category</h2>
+</div>
+
+<%= render 'form', category: @category %>

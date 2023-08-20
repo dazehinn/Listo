@@ -1,0 +1,43 @@
+  <div class="loginHeader categoryHeader">
+    <%= link_to destroy_user_session_path, method: :delete, class: 'backArrow' do %>
+      <i class="icon-arrow-left"></i>
+    <% end %>
+    <h2 class="categoryHeaderTitle">Categories</h2>
+    <div class="search">
+      <img src="https://i.postimg.cc/R0xX4NtN/pngfind-com-lupa-png-sin-fondo-4235556.png' border='0' alt='pngfind-com-lupa-png-sin-fondo-4235556'"/>
+    </div>
+  </div>
+
+  <h2 class="categories-title">
+      <span class="categories-text">Aggregate Spending</span>
+      <span class="categories-number">$<%= total_sum = @user.items.sum(:amount) %></span>
+  </h2>
+  <div class="bodyCategory cat">
+    <div class="categoriesContainer">
+      <% @categories.each do |category| %>
+        <div class="categoryItem">
+          <%= link_to category_items_path(category) do %>
+            <div class="categoryItemImgCont">
+              <% if category.icon.present?%>
+                <%= image_tag category.icon, alt: "#{category.name} icon" %>
+              <% else %>
+                No icon available
+              <% end %>
+            </div>
+            <div class="categoryItemTextCont">
+                <h3><%= category.name%></h3>
+                <p><%= l category.created_at.to_date, format: :long %></p>
+            </div>
+          <% end %>
+          <div class="categoryItemCreated">
+                <p>$<%= Item.where(category_id: category.id).sum(:amount) %></p>
+                <%= button_to 'Delete', category_path(id: category.id), method: :delete, class: 'btn ' %>
+              </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="linkContainer">
+      <%= link_to 'Add a new category', new_category_path, class: 'link-to' %>
+    </div>
+  </div>
+
