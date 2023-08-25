@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: Listo_production
   username: Listo
   password: <%= ENV["LISTO_DATABASE_PASSWORD"] %>
