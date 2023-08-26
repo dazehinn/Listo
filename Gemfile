@@ -81,3 +81,5 @@ gem 'cancancan'
 gem 'devise', '~> 4.9'
 
 gem 'letter_opener'
+
+gem 'psych', '< 4.0.0'
