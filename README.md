@@ -70,9 +70,9 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo & preview <a name="live-demo"></a>
-[walkthrough video]()
+[walkthrough video](https://drive.google.com/file/d/1i-OHOFG_piOy-gTA9Ba77GBEE0e01jCM/view?usp=sharing)
 
-[live demo]()
+[live demo](https://listo-3qdo.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
