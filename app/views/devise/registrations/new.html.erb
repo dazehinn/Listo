@@ -1,0 +1,31 @@
+<div class= "singUp">
+  <div class="loginHeader">
+  <%= link_to root_path, class: 'backArrow' do %>
+    <i class="icon-arrow-left"></i>
+  <% end %>
+  <h2>Register</h2>
+  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :post, class: 'singUpForm' }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="imputField">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "email" %>
+    </div>
+
+    <div class="imputField">
+      <%= f.text_field :name, placeholder: "Full name" %>
+    </div>
+
+    <div class="imputField">
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Create your password (min 6 characters)" %>
+    </div>
+
+    <div class="imputField">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm your password" %>
+    </div>
+
+    <div class="action">
+      <%= f.submit "Next" %>
+    </div>
+  <% end %>
+</div>

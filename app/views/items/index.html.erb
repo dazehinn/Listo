@@ -1,0 +1,43 @@
+<div class="loginHeader categoryHeader">
+  <%= link_to categories_path, class: 'backArrow' do %>
+    <i class="icon-arrow-left"></i>
+  <% end %>
+  <h2 class="categoryHeaderTitle">Items</h2>
+  <div class="search">
+    <img src="https://i.postimg.cc/R0xX4NtN/pngfind-com-lupa-png-sin-fondo-4235556.png' border='0' alt='pngfind-com-lupa-png-sin-fondo-4235556'"/>
+  </div>
+</div>
+
+<h2 class="categories-title transactions">Transactions for: <%= content_tag :span, @category.name, class: 'brand' %>
+</h2>
+<h2 class="categories-title transactions">Total amount: $<%= @total_amount %></h2>
+
+<div class="bodyCategory cardTransactions">
+  <% if @items.blank? %>
+    <h2 class="noCategory"> No registered transactions </h2>
+    <h4 class="noCategory"> Your new transactions will be placed here </h4>
+  <% else %>
+    <div class= "categoriesContainer">
+      <% @items.each do |item| %>
+          <div class="categoryItem">
+            <div class="movementDetails">
+              <div class="categoryItemImgCont">
+                <%= image_tag @category.icon rescue image_tag %>
+              </div>
+              <div class="categoryItemTextCont">
+                <p>Name: <%= item.name %> </p>
+                <p>Date: <%= item.created_at.to_date %> </p>
+              </div>
+            </div>
+            <div class="categoryItemCreated">
+              <p>Amount: $<%= item.amount %> </p>
+              <%= button_to "Delete", category_item_path(user_id: item.user.id, category_id: item.category.id, id: item.id), method: :delete, class: "btn"  %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="linkContainer">
+    <%= link_to "Add a new transaction", new_category_item_path(category_id: @category.id), class: 'link-to' %>
+  </div>
+</div>
